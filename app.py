@@ -1,4 +1,5 @@
 from data_numbers import readInt
+from close import close_app
 
 
 print('''
@@ -30,7 +31,7 @@ elif chosen_option == 3:
 
 elif chosen_option == 4:
 
-    print('Thanks for using our system!\n')
+    close_app()
 
 else:
 

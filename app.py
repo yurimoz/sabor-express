@@ -1,3 +1,6 @@
+from data_numbers import readInt
+
+
 print('''
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
@@ -11,5 +14,24 @@ print('2. List Restaurant')
 print('3. Activate Restaurant')
 print('4. Exit\n')
 
-chosen_option = input('Choose an option: ')
-print(f'You chose option {chosen_option}\n')
+chosen_option = readInt('Choose an option: ')
+
+if chosen_option == 1:
+
+    print('Register a Restaurant\n')
+
+elif chosen_option == 2:
+
+    print('List Restaurant\n')
+
+elif chosen_option == 3:
+
+    print('Activate Restaurant\n')
+
+elif chosen_option == 4:
+
+    print('Thanks for using our system!\n')
+
+else:
+
+    print(f'{chosen_option} is not a valid option\n')

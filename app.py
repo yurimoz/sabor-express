@@ -1,8 +1,8 @@
-from data_numbers import readInt
+from data_numbers import readInt, validate_entry
 from close import close_app
 
-
-print('''
+def show_title():
+    print('''
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
 ╚█████╗░███████║██████╦╝██║░░██║██████╔╝  █████╗░░░╚███╔╝░██████╔╝██████╔╝█████╗░░╚█████╗░╚█████╗░
@@ -10,12 +10,20 @@ print('''
 ██████╔╝██║░░██║██████╦╝╚█████╔╝██║░░██║  ███████╗██╔╝╚██╗██║░░░░░██║░░██║███████╗██████╔╝██████╔╝
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░\n''')
 
-print('1. Register a Restaurant')
-print('2. List Restaurant')
-print('3. Activate Restaurant')
-print('4. Exit\n')
+    
+def create_menu(*options):
 
-chosen_option = readInt('Choose an option: ')
+    for number, option in enumerate(options):
+        print(f'{number + 1:>2}.{option}')
+    
+    chosen_option = validate_entry('Choose an option: ', lowerlim=1, upperlim=len(options))
+
+    return chosen_option
+
+    
+show_title()
+chosen_option = create_menu('Register a Restaurant', 'List Restaurant', 'Activate Restaurant', 'Exit\n')
+
 
 if chosen_option == 1:
 
@@ -32,7 +40,3 @@ elif chosen_option == 3:
 elif chosen_option == 4:
 
     close_app()
-
-else:
-
-    print(f'{chosen_option} is not a valid option\n')

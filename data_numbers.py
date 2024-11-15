@@ -30,3 +30,15 @@ def readFloat(msg = ''):
 
         else:
             return x
+
+
+def validate_entry(msg = '', lowerlim = 1, upperlim = 10):
+
+    while True:
+        entry = readInt(msg)
+        if lowerlim <= entry <= upperlim:
+            break
+        else:
+            print(f'{entry} is not a valid option')
+    
+    return entry

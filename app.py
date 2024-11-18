@@ -1,4 +1,4 @@
-from data_numbers import readInt, validate_entry
+from data_numbers import validate_entry
 from close import close_app
 
 def show_title():
@@ -20,23 +20,31 @@ def create_menu(*options):
 
     return chosen_option
 
+def execute_option(option):
+
+    if option == 1:
+
+        print('Register a Restaurant\n')
+
+    elif option == 2:
+
+        print('List Restaurant\n')
+
+    elif option == 3:
+
+        print('Activate Restaurant\n')
+
+    elif option == 4:
+
+        close_app()
+
+def main():
+    show_title()
+    chosen_option = create_menu('Register a Restaurant', 'List Restaurant', 'Activate Restaurant', 'Exit\n')
+    execute_option(chosen_option)
+
+
     
-show_title()
-chosen_option = create_menu('Register a Restaurant', 'List Restaurant', 'Activate Restaurant', 'Exit\n')
 
-
-if chosen_option == 1:
-
-    print('Register a Restaurant\n')
-
-elif chosen_option == 2:
-
-    print('List Restaurant\n')
-
-elif chosen_option == 3:
-
-    print('Activate Restaurant\n')
-
-elif chosen_option == 4:
-
-    close_app()
+if __name__ == '__main__':
+    main()

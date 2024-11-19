@@ -2,15 +2,18 @@ from close import close_app
 from os import system
 import restaurant
 
+restaurants = []
+end = False
+
 def execute_option(option):
 
     if option == 1:
 
-        print('Register a Restaurant\n')
+        restaurants.append(restaurant.register_restaurant())
 
     elif option == 2:
 
-        print('List Restaurant\n')
+        restaurant.list_restaurants(restaurants)
 
     elif option == 3:
 
@@ -18,7 +21,10 @@ def execute_option(option):
 
     elif option == 4:
 
+        global end
         close_app()
+        end = True
+        
 
 def main():
     system('cls')
@@ -28,4 +34,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    while True:
+        if end:
+            break
+
+        main()

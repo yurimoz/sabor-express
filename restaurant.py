@@ -22,17 +22,30 @@ def create_menu(*options):
     return chosen_option
 
 
-def register_restaurant():
+def return_main_menu():
+
+    input('\nPress enter to return to the main menu.')
+
+
+def show_sub_title(msg):
     system('cls')
+    print('~'*30)
+    print(msg.center(30))
+    print('~'*30)
+
+def register_restaurant():
+    show_sub_title('REGISTER RESTAURANTS')
     name = str(input('Enter the name of the restaurant: ')).strip()
     print(f'{name} was successfully registered!')
-    input('Press enter to return to the main menu')
+    return_main_menu()
     return name
 
 
 def list_restaurants(restaurants):
+    show_sub_title('RESTAURANTS')
 
     for n, r in enumerate(restaurants):
         print(f'{n + 1}. {r}')
     
-    input('Press enter to return to the main menu.')
+    return_main_menu()
+    

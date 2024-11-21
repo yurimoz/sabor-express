@@ -2,7 +2,7 @@ from close import close_app
 from os import system
 import restaurant
 
-restaurants = []
+restaurants = ['Sushi Max', 'Pizza Top']
 end = False
 
 def execute_option(option):

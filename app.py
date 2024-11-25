@@ -2,7 +2,11 @@ from close import close_app
 from os import system
 import restaurant
 
-restaurants = ['Sushi Max', 'Pizza Top']
+restaurants = [{'name':'Sushi Max', 'category':'Japanese', 'active': True},
+               {'name':'Pizza Top', 'category':'Pizza', 'active': True},
+               {'name':'Mamma Maglione', 'category':'Italian', 'active': False}
+               ]
+
 end = False
 
 def execute_option(option):

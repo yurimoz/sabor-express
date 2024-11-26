@@ -55,18 +55,20 @@ def register_restaurant():
 def list_restaurants(restaurants):
     show_sub_title('RESTAURANTS')
 
-    print('Cod.'.ljust(15), 'Name'.ljust(17), 'Category'.ljust(20), 'Status'.ljust(15))
+    print('Cod.'.ljust(14), 'Name'.ljust(16), 'Category'.ljust(19), 'Status'.ljust(15))
+    print('')
 
     for n, restaurant in enumerate(restaurants):
-        print(f'\n{n:<15}', end='')
-        for key, value in restaurant.items():
-            if key == 'active':
-                if value == True:
-                    print('Active'.ljust(20), end='')
-                else:
-                    print('Inactive'.ljust(20), end='')
-            else:        
-                print(f'{value:<20}', end='')
+        name = restaurant['name']
+        category = restaurant['category']
+        active = restaurant['active']
+
+        if active:
+
+            print(f'{n+1:<15}{name:<17}{category:20}Active')
+        
+        else:
+            print(f'{n+1:<15}{name:<17}{category:20}Inactive')
     
     print('\n')
     

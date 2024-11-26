@@ -71,6 +71,20 @@ def list_restaurants(restaurants):
             print(f'{n+1:<15}{name:<17}{category:20}Inactive')
     
     print('\n')
+
+
+def activate_restaurant(restaurants_list):
+
+    list_restaurants(restaurants_list)
+    choice = validate_entry('\nWhich restaurant do you want to activate/deactivate? ', 1, len(restaurants_list))
+
+    if restaurants_list[choice - 1]['active']:
+
+        restaurants_list[choice - 1]['active'] = False
+        print(f'{restaurants_list[choice - 1]['name']} is now inactive')
+    
+    else:
+        restaurants_list[choice - 1]['active'] = True
+        print(f'{restaurants_list[choice - 1]['name']} is now active')
     
     return_main_menu()
-    

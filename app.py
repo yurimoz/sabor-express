@@ -18,10 +18,11 @@ def execute_option(option):
     elif option == 2:
 
         restaurant.list_restaurants(restaurants)
+        restaurant.return_main_menu()
 
     elif option == 3:
 
-        print('Activate Restaurant\n')
+        restaurant.activate_restaurant(restaurants)
 
     elif option == 4:
 
